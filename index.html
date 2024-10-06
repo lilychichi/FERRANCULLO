@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+     <div class="profile-container" id="home">
+        <div class="profile-picture"></div>
+        <div class="profile-name">Mana</div>
+        <div class="profile-home">真那 (マナ) Just a profile.</div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contacts">Contacts</a></li>
+            </ul>
+        </nav>
+    </div>
+</head>
+<body>
+   
+    <div class="parallax-container" id="about">
+        <div class="text-overlay">
+            <h2>...</h2>
+            <p>渚 (なぎさ) - shore, tranquility
+            <br>真 (じつ) - truth, reality
+            <br>幻 (まぼろし) - phantasm, dream, illusion</p>
+            <p>
+                Hello! I'm Mark Francis Ferrancullo, but I prefer the name Mana, as it holds sentimental value for me. 
+                You can call me Mark, Francis, or Franz, whichever you prefer; just don’t call me 'Mana' in real life. 
+                I strive to reach my holy grail of peace and serenity, currently working towards that by acquiring knowledge and experiences.
+
+            </p> 
+                
+            <p> 
+                At 19, I’m pursuing a degree in IT at QCU, hoping to become a decent student. 
+                I love playing games, especially Tetris and rhythm games (like VSRGs). 
+                While I find academics stressful and often view them as obligations, I remain indifferent to them.
+                I can be misanthropic and struggle with socializing, often feeling boring and awkward. 
+                However, I enjoy listening to music, watching movies, taking photographs, drawings, reading interesting things, and I have a fascination with insects like spiders and moths.
+            <br> (｡• ω •｡)</p>
+            <a href="https://www.messenger.com/t/100008715643035" class="social-button">Leave a Message</a>
+        </div>
+    
+     <div class="audss-container">
+        <div class="slideshow-container">
+            <div class="slideshow">
+                <img src="images/random.jpg" class="slide active" alt="stare">
+                <img src="images/dogbiting.jpg" class="slide" alt="my pup">
+                <img src="images/pedals.jpeg" class="slide" alt="pedal">
+                <img src="images/this hard pose.jpg" class="slide" alt="old">
+                <img src="images/q.jpg" class="slide" alt="monolith?">
+                <img src="images/waifu3.jpg" class="slide" alt="my wife">
+            </div>
+            <a class="prev" onclick="prevSlide()">&#10094;</a>
+            <a class="next" onclick="nextSlide()">&#10095;</a>
+        </div>
+
+        <div class="audio-container">
+            <iframe style="border-radius:10px" 
+            src="https://open.spotify.com/embed/track/7mh2PjtG0nmdzsL6xO0YmI?utm_source=generator" 
+            width="100%" 
+            height="90" 
+            frameBorder="0" 
+            allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+            </iframe>
+        </div>
+    </div>  
+    
+    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let slideIndex = 0;
+            const slides = document.querySelectorAll('.slide');
+        
+            function showSlides() {
+                slides.forEach(slide => slide.classList.remove('active'));
+                slideIndex = (slideIndex + 1) % slides.length;
+                slides[slideIndex].classList.add('active');
+            }
+        
+            setInterval(showSlides, 8500); 
+        
+            document.querySelector('.next').addEventListener('click', function() {
+                slides[slideIndex].classList.remove('active');
+                slideIndex = (slideIndex + 1) % slides.length;
+                slides[slideIndex].classList.add('active');
+            });
+        
+            document.querySelector('.prev').addEventListener('click', function() {
+                slides[slideIndex].classList.remove('active');
+                slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+                slides[slideIndex].classList.add('active');
+            });
+        });
+        </script>
+</body>
+<footer>
+    <div class="contact" id="contacts">
+        <h2>Socials</h2>
+        <p>and other stuff:</p>
+        <hr>
+        
+        <div class="social-icons">
+            <a href="https://www.facebook.com/futariswitch"><img src="social-images/facebook.png" alt="Facebook icon"></a>
+            <a href="https://www.youtube.com/@1maple"><img src="social-images/youtube.png" alt="YouTube icon"></a>
+            <a href="https://open.spotify.com/user/31bzb4yaod7t26v52w3dyiefo64u"><img src="social-images/spotify.png" alt="Spotify icon"></a>
+            <a href="https://osu.ppy.sh/users/21016681"><img src="social-images/osu.png" alt="osu! icon"></a>
+            <a href="https://www.roblox.com/users/3312450546/profile"><img src="social-images/roblox.png" alt="Roblox icon"></a>
+        </div>
+
+        <div class="footer">
+            <p>That's all folks!</p>
+            <p>End.</p>
+        </div>
+    </div>
+</footer>
+</html>
